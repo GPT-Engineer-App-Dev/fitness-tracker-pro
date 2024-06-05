@@ -1,7 +1,12 @@
 import { Box, Container, Flex, Heading, Text, VStack, HStack, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
-const Index = () => {
+const ProgressTracking = () => {
+  // Sample data
+  const totalWorkouts = 20;
+  const totalDuration = 600; // in minutes
+  const caloriesBurned = 5000;
+
   return (
     <Container maxW="container.xl" p={0}>
       <Flex as="nav" bg="blue.500" color="white" p={4} justifyContent="space-between" alignItems="center">
@@ -16,26 +21,23 @@ const Index = () => {
       </Flex>
       <VStack spacing={8} p={8} alignItems="flex-start">
         <Box w="full" p={4} bg="gray.100" borderRadius="md">
-          <Heading size="lg" mb={4}>Daily Activity Summary</Heading>
-          <Text>Steps: 10,000</Text>
-          <Text>Calories Burned: 500</Text>
-          <Text>Active Minutes: 60</Text>
+          <Heading size="lg" mb={4}>Progress Tracking</Heading>
+          <Text>Total Workouts: {totalWorkouts}</Text>
+          <Text>Total Duration: {totalDuration} minutes</Text>
+          <Text>Calories Burned: {caloriesBurned}</Text>
         </Box>
         <Box w="full" p={4} bg="gray.100" borderRadius="md">
-          <Heading size="lg" mb={4}>Recent Workouts</Heading>
-          <Text>Workout 1: Running - 30 mins</Text>
-          <Text>Workout 2: Cycling - 45 mins</Text>
-        </Box>
-        <Box w="full" p={4} bg="gray.100" borderRadius="md">
-          <Heading size="lg" mb={4}>Nutrition Summary</Heading>
-          <Text>Calories Consumed: 2000</Text>
-          <Text>Protein: 150g</Text>
-          <Text>Carbs: 250g</Text>
-          <Text>Fats: 70g</Text>
+          <Heading size="lg" mb={4}>Progress Chart</Heading>
+          {/* Placeholder for chart */}
+          <svg width="100%" height="200">
+            <rect x="10" y="10" width="50" height="180" fill="blue" />
+            <rect x="70" y="50" width="50" height="140" fill="green" />
+            <rect x="130" y="30" width="50" height="160" fill="red" />
+          </svg>
         </Box>
       </VStack>
     </Container>
   );
 };
 
-export default Index;
+export default ProgressTracking;
